@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="creditcard.api" />
+        <module name="creditcard.center" />
+        <module name="creditcard.dao" />
+        <module name="creditcard.web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="credit-card" target="1.7" />
+      <module name="creditcard.api" target="1.8" />
+      <module name="creditcard.center" target="1.7" />
+      <module name="creditcard.dao" target="1.7" />
+      <module name="creditcard.web" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

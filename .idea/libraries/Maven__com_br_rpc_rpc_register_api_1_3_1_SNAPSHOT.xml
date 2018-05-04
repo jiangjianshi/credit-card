@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.br.rpc:rpc.register.api:1.3.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/br/rpc/rpc.register.api/1.3.1-SNAPSHOT/rpc.register.api-1.3.1-20171124.070420-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/br/rpc/rpc.register.api/1.3.1-SNAPSHOT/rpc.register.api-1.3.1-20171124.070420-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/br/rpc/rpc.register.api/1.3.1-SNAPSHOT/rpc.register.api-1.3.1-20171124.070420-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

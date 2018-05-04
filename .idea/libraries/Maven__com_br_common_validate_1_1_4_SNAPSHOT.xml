@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.br.common:validate:1.1.4-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/br/common/validate/1.1.4-SNAPSHOT/validate-1.1.4-20170830.064833-11.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/br/common/validate/1.1.4-SNAPSHOT/validate-1.1.4-20170830.064833-11-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/br/common/validate/1.1.4-SNAPSHOT/validate-1.1.4-20170830.064833-11-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

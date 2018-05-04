@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.br.skyrim:engine.api:1.0.3-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/br/skyrim/engine.api/1.0.3-SNAPSHOT/engine.api-1.0.3-20170921.064457-4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/br/skyrim/engine.api/1.0.3-SNAPSHOT/engine.api-1.0.3-20170921.064457-4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/br/skyrim/engine.api/1.0.3-SNAPSHOT/engine.api-1.0.3-20170921.064457-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

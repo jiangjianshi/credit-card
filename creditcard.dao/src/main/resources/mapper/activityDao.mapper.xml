@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.br.card.dao.ActivityDao">
+
+	<sql id="columnList">    <!-- 字段 -->
+        id,
+        activity_name,
+        activity_rule,
+        activity_remark,
+        activity_status,
+        start_time,
+        end_time,
+        expire_time,
+        create_time,
+        update_time
+    </sql>
+
+    <sql id="TColumnList">    <!-- 带表别名的字段 -->
+        ca.id as "id",
+        ca.activity_name as "activityName",
+        ca.activity_rule as "activityRule",
+        ca.activity_remark as "activityRemark",
+        ca.activity_status as "activityStatus",
+        date_format(ca.start_time, '%Y-%c-%d %H:%i:%s') as "startTime",
+        date_format(ca.end_time, '%Y-%c-%d %H:%i:%s') as "endTime",
+        date_format(ca.expire_time, '%Y-%c-%d %H:%i:%s') as "expireTime",
+        date_format(ca.create_time, '%Y-%c-%d %H:%i:%s') as "createTime",
+        date_format(ca.update_time, '%Y-%c-%d %H:%i:%s') as "updateTime"
+    </sql>
+
+	<sql id="queryConditions"><!-- 查询条件 -->
+        <where>(ca.activity_status in (0,1,2)
+            <if test="activityStatus == null or activityStatus == ''">
+                )
+            </if>
+            <if test="activityStatus != null and activityStatus != ''">
+                or ca.activity_status in (${activityStatus}))
+            </if>
+            <if test="id != null and id != ''">
+                AND ca.id = #{id}
+            </if>
+            <if test="activityName != null and activityName != ''">
+                AND ca.activity_name like concat('%',#{activityName},'%')
+            </if>
+            <if test="activityRule != null and activityRule != ''">
+                AND ca.activity_rule like concat('%',#{activityRule},'%')
+            </if>
+            <if test="activityRemark != null and activityRemark != ''">
+                AND ca.activity_remark like concat('%',#{activityRemark},'%')
+            </if>
+        </where>
+            ORDER BY ca.create_time desc
+    </sql>
+
+    <insert id="addActivity" parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="id">
+        insert into c_activity (
+            <include refid="columnList"/>
+        ) values (
+            #{id},
+            #{activityName},
+            #{activityRule},
+            #{activityRemark},
+            #{activityStatus},
+            #{startTime},
+            #{endTime},
+            #{expireTime},
+            #{createTime},
+            #{updateTime}
+        )
+    </insert>
+
+    <update id="deleteActivity">
+        update c_activity ca SET
+            ca.activity_status = '3',
+            ca.update_time = CURRENT_TIMESTAMP
+        where 1=1
+        <if test="id != null and id != ''">
+            and ca.id = #{id}
+        </if>
+    </update>
+
+    <update id="updateActivity">
+        update c_activity ca
+        <set>
+            <if test="activityName != null and activityName != ''">
+                ca.activity_name = #{activityName},
+            </if>
+            <if test="activityRule != null and activityRule != ''">
+                ca.activity_rule = #{activityRule},
+            </if>
+            <if test="activityRemark != null and activityRemark != ''">
+                ca.activity_remark = #{activityRemark},
+            </if>
+            <if test="activityStatus != null and activityStatus != ''">
+                ca.activity_status = #{activityStatus},
+            </if>
+            <if test="startTime != null and startTime != ''">
+                ca.start_time = #{startTime},
+            </if>
+            <if test="endTime != null and endTime != ''">
+                ca.end_time = #{endTime},
+            </if>
+            <if test="expireTime != null and expireTime != ''">
+                ca.expire_time = #{expireTime},
+            </if>
+            ca.update_time = CURRENT_TIMESTAMP
+        </set>
+        where 1=1
+            <if test="id != null and id != ''">
+                and ca.id = #{id}
+            </if>
+    </update>
+
+    <select id="getSimpleActivityByCondition" resultType="java.util.Map">
+        SELECT
+            <include refid="TColumnList"/>
+        FROM c_activity ca
+        <include refid="queryConditions"/>
+        <if test="start != null and start != '' and size != null and size != ''">
+            LIMIT ${start},${size}
+        </if>
+    </select>
+
+    <select id="getSimpleActivityTotalByCondition" resultType="java.lang.Integer">
+        SELECT
+          COUNT(*) total
+        from c_activity ca
+        <include refid="queryConditions"/>
+    </select>
+
+</mapper>
