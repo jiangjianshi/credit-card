@@ -187,7 +187,7 @@
     </dependencies>
 
     <build>
-        <finalName>card</finalName>
+        <finalName>creditcard</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -241,29 +241,6 @@
                     <source>1.7</source>
                     <target>1.7</target>
                     <encoding>utf-8</encoding>
-                </configuration>
-            </plugin>
-            <!-- jetty插件, 设定context path与spring profile -->
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty.version}</version>
-                <configuration>
-                    <!-- 增加systemProperties属性 -->
-                    <systemProperties>
-                        <systemProperty>
-                            <name>org.eclipse.jetty.server.Request.maxFormContentSize</name>
-                            <!-- org.eclipse.jetty.server.Request.maxFormContentSize -->
-                            <!-- -1代表不作限制 -->
-                            <value>-1</value>
-                        </systemProperty>
-                    </systemProperties>
-                    <httpConnector>
-                        <port>8880</port>
-                    </httpConnector>
-                    <webAppConfig>
-                        <contextPath>/card/</contextPath>
-                    </webAppConfig>
                 </configuration>
             </plugin>
 

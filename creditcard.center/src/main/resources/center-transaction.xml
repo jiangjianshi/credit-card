@@ -19,7 +19,7 @@
     <aop:config>
         <!-- 切入点指明了在所有方法产生事务拦截操作   OR (execution(public * com.br.rule.privatebList.service.*.*(..)))-->
         <aop:pointcut id="serviceMethods"
-                      expression="execution(public * com.br.card.center.service.*Service.*(..))"/>
+                      expression="execution(public * com.br.creditcard.center.service.*Service.*(..))"/>
         <!-- 定义了将采用何种拦截操作，这里引用到 txAdvice -->
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods"/>
     </aop:config>

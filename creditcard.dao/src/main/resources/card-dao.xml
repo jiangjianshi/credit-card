@@ -14,7 +14,7 @@
     </bean>
 
     <bean id="jdbcTemplate" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.br.card.dao"/>
+        <property name="basePackage" value="com.br.creditcard.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sessionFactory"/>
     </bean>
 

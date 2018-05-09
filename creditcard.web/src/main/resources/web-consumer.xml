@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="springServiceResolver" class="com.br.rpc.consumer.service.SpringServiceResolver"/>
+    <bean id="configuration" class="com.br.rpc.consumer.ConsumerConfiguration">
+        <property name="loadModel" value="REQISTRY"/>
+        <property name="resolverType" value="SPRING"/>
+        <property name="registers">
+            <array>
+                <bean class="com.br.rpc.common.object.Address">
+                    <property name="ip" value="${card.register.ip}"/>
+                    <property name="port" value="${card.register.port}"/>
+                </bean>
+            </array>
+        </property>
+    </bean>
+    <bean id="rpcContext" class="com.br.rpc.consumer.context.SpringRpcContextImpl" init-method="init">
+        <constructor-arg name="configuration" ref="configuration"/>
+    </bean>
+
+    <!--spore-->
+    <bean id="userCenterService" class="com.br.rpc.consumer.service.Service">
+        <property name="project" value="spore"/>
+        <property name="serviceClass" value="com.br.spore.api.service.UserCenter"/>
+        <property name="model" value="${spore.server.model}"/>
+        <property name="version" value="${spore.server.version}"/>
+        <property name="timeOut" value="30000"/>
+        <property name="poolSize" value="64"/>
+        <property name="retry" value="${card.server.retry}"/>
+    </bean>
+
+    <bean id="userInfoService" class="com.br.rpc.consumer.service.Service">
+        <property name="project" value="spore"/>
+        <property name="serviceClass" value="com.br.spore.api.service.UserInfo"/>
+        <property name="model" value="${spore.server.model}"/>
+        <property name="version" value="${spore.server.version}"/>
+        <property name="timeOut" value="30000"/>
+        <property name="poolSize" value="64"/>
+        <property name="retry" value="${card.server.retry}"/>
+    </bean>
+
+</beans>
