@@ -1,4 +1,4 @@
-package com.br.creditcard;
+package com.br.creditcard.center;
 
 import com.br.rpc.provider.server.RpcServer;
 import com.br.rpc.provider.server.SpringRpcServerImpl;

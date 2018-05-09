@@ -7,7 +7,6 @@
     <import resource="classpath*:card-datasource.xml"/>
     <import resource="classpath*:card-dao.xml"/>
     <import resource="center-transaction.xml"/>
-    <import resource="center-consumer.xml"/>
     <import resource="center-server.xml"/>
     <import resource="center-resources.xml"/>
 </beans>

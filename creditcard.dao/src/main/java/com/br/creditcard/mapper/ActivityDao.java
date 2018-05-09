@@ -29,4 +29,6 @@ public interface ActivityDao {
    * 删除活动信息
    */
   Integer deleteActivity(Map<String, Object> paramMap);
+
+  Map<String, Object> selectById();
 }
