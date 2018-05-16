@@ -1,5 +1,6 @@
 package com.br.creditcard.center;
 
+import com.br.creditcard.common.dto.TestDto;
 import com.br.creditcard.mapper.ActivityDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,5 +29,7 @@ public class AbcTest {
         Map<String, Object> map =  activityDao.selectById();
         System.out.println(map.toString());
         System.out.println("test");
+
+        TestDto dto = new TestDto();
     }
 }

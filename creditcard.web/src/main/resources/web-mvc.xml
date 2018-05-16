@@ -12,49 +12,26 @@
 	<context:component-scan base-package="com.br.creditcard.web.controller"/>
 	<context:property-placeholder location="classpath:daily/web.properties"/>
 
-	<mvc:annotation-driven validator="validator">
-		<mvc:message-converters register-defaults="true" >
-			<!-- 将StringHttpMessageConverter的默认编码设为UTF-8 -->
-			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
-				<constructor-arg value="UTF-8" />
-			</bean>
-			<!-- 将Jackson2HttpMessageConverter的默认格式化输出设为true -->
-			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-				<property name="prettyPrint" value="true"/>
-				<property name="objectMapper">
-					<bean class="com.fasterxml.jackson.databind.ObjectMapper">
-						<property name="dateFormat">
-							<bean class="java.text.SimpleDateFormat">
-								<constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />
-							</bean>
-						</property>
-					</bean>
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html;charset=UTF-8</value>
+						<value>application/json</value>
+					</list>
+				</property>
+				<property name="features">
+					<list>
+						<value>WriteDateUseDateFormat</value>
+						<value>WriteMapNullValue</value>
+						<value>QuoteFieldNames</value>
+					</list>
 				</property>
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 
-	<!-- 验证 -->
-	<!-- 以下 validator  ConversionService 在使用 mvc:annotation-driven 会 自动注册-->
-	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-		<property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
-		<!-- 如果不加默认到 使用classpath下的 ValidationMessages.properties -->
-		<property name="validationMessageSource" ref="messageSource"/>
-	</bean>
-
-	<!-- 国际化的消息资源文件（本系统中主要用于显示/错误消息定制） -->
-	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basenames">
-			<list>
-				<!-- 在web环境中一定要定位到classpath 否则默认到当前web应用下找  -->
-				<value>classpath:messages</value>
-				<value>classpath:org/hibernate/validator/ValidationMessages</value>
-			</list>
-		</property>
-		<property name="useCodeAsDefaultMessage" value="false"/>
-		<property name="defaultEncoding" value="UTF-8"/>
-		<property name="cacheSeconds" value="60"/>
-	</bean>
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
