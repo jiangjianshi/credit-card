@@ -30,6 +30,10 @@
             <artifactId>creditcard.dao</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.br.creditcard</groupId>
+            <artifactId>creditcard.common</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.br.rpc</groupId>
             <artifactId>rpc.provider</artifactId>
         </dependency>

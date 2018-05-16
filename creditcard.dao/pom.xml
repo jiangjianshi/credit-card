@@ -21,6 +21,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.br.creditcard</groupId>
+            <artifactId>creditcard.common</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>

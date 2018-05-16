@@ -13,6 +13,7 @@
         <module>creditcard.center</module>
         <module>creditcard.dao</module>
         <module>creditcard.web</module>
+        <module>creditcard.common</module>
     </modules>
 
     <repositories>
@@ -83,6 +84,11 @@
             <dependency>
                 <groupId>com.br.creditcard</groupId>
                 <artifactId>creditcard.api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.br.creditcard</groupId>
+                <artifactId>creditcard.common</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

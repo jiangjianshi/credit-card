@@ -29,6 +29,10 @@
             <artifactId>creditcard.api</artifactId>
             <version>${creditcard.api.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.br.creditcard</groupId>
+            <artifactId>creditcard.common</artifactId>
+        </dependency>
         <!--utils-->
         <dependency>
             <groupId>org.apache.commons</groupId>
