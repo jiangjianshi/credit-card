@@ -8,7 +8,7 @@
        default-autowire="byName" default-lazy-init="false">
 
     <!-- component scan @Component @Service @Repository -->
-    <context:component-scan base-package="com.br.card"/>
+    <context:component-scan base-package="com.br.creditcard"/>
 
     <!-- load app.properties -->
     <context:property-placeholder location="classpath*:center.properties"/>
@@ -16,13 +16,12 @@
     <!-- 配置任务线性池 -->
     <task:scheduler id="scheduler" pool-size="8" />
     <!-- 启用annotation方式 -->
-    <task:annotation-driven scheduler="scheduler"
-                            proxy-target-class="true" />
+    <task:annotation-driven scheduler="scheduler" proxy-target-class="true" />
 
     <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
         <constructor-arg name="poolConfig" ref="poolConfig"/>
-        <constructor-arg name="host" value="${hermes.redis.ip}"/>
-        <constructor-arg name="port" value="${hermes.redis.port}"/>
+        <constructor-arg name="host" value="${creditcard.redis.ip}"/>
+        <constructor-arg name="port" value="${creditcard.redis.port}"/>
     </bean>
 
     <bean id="poolConfig" class="org.apache.commons.pool2.impl.GenericObjectPoolConfig">

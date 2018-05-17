@@ -11,8 +11,8 @@
         <property name="registers">
             <array>
                 <bean class="com.br.rpc.common.object.Address">
-                    <property name="ip" value="${card.register.ip}"/>
-                    <property name="port" value="${card.register.port}"/>
+                    <property name="ip" value="${creditcard.register.ip}"/>
+                    <property name="port" value="${creditcard.register.port}"/>
                 </bean>
             </array>
         </property>
@@ -26,8 +26,8 @@
     <bean id="testHandler" class="com.br.rpc.provider.processor.Processor">
         <property name="project" value="creditCard_project"/>
         <property name="handler" value="com.br.creditcard.center.handler.TestHandler"/>
-        <property name="model" value="${card.server.model}"/>
-        <property name="version" value="${card.server.version}"/>
+        <property name="model" value="${creditcard.server.model}"/>
+        <property name="version" value="${creditcard.server.version}"/>
     </bean>
 
 </beans>

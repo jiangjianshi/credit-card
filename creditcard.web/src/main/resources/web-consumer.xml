@@ -11,8 +11,8 @@
         <property name="registers">
             <array>
                 <bean class="com.br.rpc.common.object.Address">
-                    <property name="ip" value="${card.register.ip}"/>
-                    <property name="port" value="${card.register.port}"/>
+                    <property name="ip" value="${creditcard.register.ip}"/>
+                    <property name="port" value="${creditcard.register.port}"/>
                 </bean>
             </array>
         </property>
@@ -29,7 +29,7 @@
         <property name="version" value="${spore.server.version}"/>
         <property name="timeOut" value="30000"/>
         <property name="poolSize" value="64"/>
-        <property name="retry" value="${card.server.retry}"/>
+        <property name="retry" value="${creditcard.server.retry}"/>
     </bean>
 
     <bean id="userInfoService" class="com.br.rpc.consumer.service.Service">
@@ -39,17 +39,17 @@
         <property name="version" value="${spore.server.version}"/>
         <property name="timeOut" value="30000"/>
         <property name="poolSize" value="64"/>
-        <property name="retry" value="${card.server.retry}"/>
+        <property name="retry" value="${creditcard.server.retry}"/>
     </bean>
     <!--your interface-->
     <!-- testHandler -->
     <bean id="testHandler" class="com.br.rpc.consumer.service.Service">
         <property name="project" value="creditCard_project"/>
         <property name="serviceClass" value="com.br.creditcard.api.service.TestHandler"/>
-        <property name="model" value="${card.server.model}"/>
-        <property name="version" value="${card.server.version}"/>
+        <property name="model" value="${creditcard.server.model}"/>
+        <property name="version" value="${creditcard.server.version}"/>
         <property name="timeOut" value="30000"/>
         <property name="poolSize" value="64"/>
-        <property name="retry" value="${card.server.retry}"/>
+        <property name="retry" value="${creditcard.server.retry}"/>
     </bean>
 </beans>

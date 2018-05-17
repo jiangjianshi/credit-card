@@ -5,9 +5,9 @@
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
           destroy-method="close">
-        <property name="url" value="${card.jdbc.url}"/>
-        <property name="username" value="${card.jdbc.user}"/>
-        <property name="password" value="${card.jdbc.passwd}"/>
+        <property name="url" value="${creditcard.jdbc.url}"/>
+        <property name="username" value="${creditcard.jdbc.user}"/>
+        <property name="password" value="${creditcard.jdbc.passwd}"/>
 
         <property name="filters" value="stat"/>
 

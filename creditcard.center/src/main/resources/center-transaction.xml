@@ -18,8 +18,7 @@
     <!-- 需要引入aop的命名空间 -->
     <aop:config>
         <!-- 切入点指明了在所有方法产生事务拦截操作   OR (execution(public * com.br.rule.privatebList.service.*.*(..)))-->
-        <aop:pointcut id="serviceMethods"
-                      expression="execution(public * com.br.creditcard.center.service.*Service.*(..))"/>
+        <aop:pointcut id="serviceMethods" expression="execution(public * com.br.creditcard.center.service.*Service.*(..))"/>
         <!-- 定义了将采用何种拦截操作，这里引用到 txAdvice -->
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods"/>
     </aop:config>
@@ -31,40 +30,11 @@
             <!-- read-only : 不启用事务 -->
             <tx:method name="get*" read-only="true"/>
             <!-- propagation="REQUIRED": 如果是保存，删除以及修改启用普通事务-->
-            <tx:method name="obtain*" propagation="REQUIRED"/>
             <tx:method name="delete*" propagation="REQUIRED"/>
             <tx:method name="update*" propagation="REQUIRED"/>
             <tx:method name="add*" propagation="REQUIRED"/>
-            <tx:method name="insert*" propagation="REQUIRED"/>
-            <tx:method name="drop*" propagation="REQUIRED"/>
-            <tx:method name="loanApplication" propagation="REQUIRED"/>
-            <tx:method name="updateHot" propagation="REQUIRED"/>
-            <tx:method name="realName" propagation="REQUIRED"/>
-            <tx:method name="obtainOperator" propagation="REQUIRED"/>
-            <tx:method name="obtainH5PageUrl" propagation="REQUIRED"/>
-            <tx:method name="checkCode" propagation="REQUIRED"/>
-            <tx:method name="checkSecondCode" propagation="REQUIRED"/>
-            <tx:method name="obtainBankList" propagation="REQUIRED"/>
-            <tx:method name="obtainLoginModel" propagation="REQUIRED"/>
-            <tx:method name="login" propagation="REQUIRED"/>
-            <tx:method name="taskStatus" propagation="REQUIRED"/>
-            <tx:method name="putCode" propagation="REQUIRED"/>
-            <tx:method name="rank" propagation="REQUIRED"/>
-            <tx:method name="save" propagation="REQUIRED"/>
-            <tx:method name="getKeyAttribution" propagation="REQUIRED"/>
-            <tx:method name="refreshOperatorCaptcha" propagation="REQUIRED"/>
-            <tx:method name="verifyOperatorInfo" propagation="REQUIRED"/>
-            <tx:method name="getCheckVerificationCode" propagation="REQUIRED"/>
+            <tx:method name="save*" propagation="REQUIRED"/>
 
-            <tx:method name="receviceCardUserMapping" propagation="REQUIRED"/>
-            <tx:method name="returnCardUserMapping" propagation="REQUIRED"/>
-            <tx:method name="addCardUserMapping" propagation="REQUIRED"/>
-
-            <tx:method name="joinActivity" propagation="REQUIRED"/>
-            <tx:method name="joinTeam" propagation="REQUIRED"/>
-            <tx:method name="creatTeam" propagation="REQUIRED"/>
-
-            <tx:method name="applyPrintCard" propagation="REQUIRED"/>
             <tx:method name="*" read-only="true"/>
         </tx:attributes>
     </tx:advice>
