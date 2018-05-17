@@ -130,9 +130,9 @@
             </Policies>
         </RollingFile>
 
-        <!-- creditcard info级别的 -->
-        <RollingFile name="creditcard-info" fileName="logs/creditcard-info.log"
-                     filePattern="logs/creditcard-info.log.%d{MM-dd-yyyy}">
+        <!-- card info级别的 -->
+        <RollingFile name="card-info" fileName="logs/card-info.log"
+                     filePattern="logs/card-info.log.%d{MM-dd-yyyy}">
             <ThresholdFilter level="info" onMatch="ACCEPT"
                              onMismatch="DENY"/>
             <PatternLayout
@@ -142,9 +142,9 @@
             </Policies>
         </RollingFile>
 
-        <!-- creditcard warn -->
-        <RollingFile name="creditcard-warn" fileName="logs/creditcard-warn.log"
-                     filePattern="logs/creditcard-warn.log.%d{MM-dd-yyyy}">
+        <!-- card warn -->
+        <RollingFile name="card-warn" fileName="logs/card-warn.log"
+                     filePattern="logs/card-warn.log.%d{MM-dd-yyyy}">
             <ThresholdFilter level="warn" onMatch="ACCEPT"
                              onMismatch="DENY"/>
             <PatternLayout
@@ -154,9 +154,9 @@
             </Policies>
         </RollingFile>
 
-        <!-- creditcard error -->
-        <RollingFile name="creditcard-error" fileName="logs/creditcard-error.log"
-                     filePattern="logs/creditcard-error.log.%d{MM-dd-yyyy}">
+        <!-- card error -->
+        <RollingFile name="card-error" fileName="logs/card-error.log"
+                     filePattern="logs/card-error.log.%d{MM-dd-yyyy}">
             <ThresholdFilter level="error" onMatch="ACCEPT"
                              onMismatch="DENY"/>
             <PatternLayout
@@ -188,10 +188,10 @@
             <appender-ref ref="anubis-error"/>
         </logger>
 
-        <logger name="com.br.creditcard" additivity="false">
-            <appender-ref ref="creditcard-info"/>
-            <appender-ref ref="creditcard-error"/>
-            <appender-ref ref="creditcard-warn"/>
+        <logger name="com.br.card" additivity="false">
+            <appender-ref ref="card-info"/>
+            <appender-ref ref="card-error"/>
+            <appender-ref ref="card-warn"/>
             <appenderRef ref="Console" />
             <!--这段上正式的时候需要去掉 -->
         </logger>

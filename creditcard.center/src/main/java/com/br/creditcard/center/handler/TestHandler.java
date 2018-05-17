@@ -2,6 +2,8 @@ package com.br.creditcard.center.handler;
 
 import com.br.creditcard.api.dto.ApiDto;
 import org.apache.thrift.TException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
@@ -10,6 +12,7 @@ import java.util.Map;
  */
 public class TestHandler implements com.br.creditcard.api.service.TestHandler.Iface{
 
+    private static Logger logger = LoggerFactory.getLogger(TestHandler.class);
 
     @Override
     public ApiDto testHandler(int tid, Map<String, String> paramMap) throws TException {
@@ -17,6 +20,7 @@ public class TestHandler implements com.br.creditcard.api.service.TestHandler.If
         dto.setCode(1);
         dto.setMessage("success");
         dto.setData("data");
+        logger.info("data = {}", dto.toString());
         return dto;
     }
 }
