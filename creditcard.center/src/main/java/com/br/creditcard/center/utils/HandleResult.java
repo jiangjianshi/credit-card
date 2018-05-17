@@ -3,9 +3,7 @@ package com.br.creditcard.center.utils;
 import com.br.creditcard.api.dto.ApiDto;
 import com.br.creditcard.common.constants.Consts;
 import com.br.creditcard.common.utils.GsonUtils;
-import com.br.creditcard.common.utils.RespMsg;
 
-import java.util.Objects;
 
 /**
  * Created by bairong on 2018/5/17.
@@ -14,6 +12,7 @@ public class HandleResult {
 
     /**
      * 成功
+     *
      * @param msg
      * @return
      */
@@ -23,12 +22,14 @@ public class HandleResult {
 
     /**
      * 失败
+     *
      * @param msg
      * @return
      */
     public static ApiDto fail(String msg) {
         return fail(msg, null);
     }
+
     /**
      * 成功
      *
