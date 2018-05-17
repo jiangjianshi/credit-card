@@ -8,7 +8,7 @@
         <property name="configLocation" value="classpath:mybatis-config.xml" />
         <property name="mapperLocations">
             <list>
-                <value>classpath*:mapper/*.mapper.xml</value>
+                <value>classpath*:mapper/*Mapper.xml</value>
             </list>
         </property>
     </bean>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.br.creditcard.mapper.ActivityMapper">
+
+
+    <sql id="columns">
+        a.id,
+        a.open_id,
+        a.nick_name,
+        a.gender,
+        a.city,
+        a.province,
+        a.country,
+        a.language,
+        a.user_remark,
+        a.gray_status,
+        a.create_time,
+        a.update_time,
+        a.avatar_url
+    </sql>
+    <!--查询结果集 -->
+    <resultMap id="beanMap" type="com.br.creditcard.common.po.User">
+        <result property="id" column="id"/>
+        <result property="openId" column="open_id"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="gender" column="gender"/>
+        <result property="city" column="city"/>
+        <result property="province" column="province"/>
+        <result property="country" column="country"/>
+        <result property="language" column="language"/>
+        <result property="userRemark" column="user_remark"/>
+        <result property="grayStatus" column="gray_status"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="avatarUrl" column="avatar_url"/>
+    </resultMap>
+
+    <!-- 根据主键查询 -->
+    <select id="selectByPage" resultMap="beanMap">
+        select
+        <include refid="columns" />
+        from c_user a
+    </select>
+
+</mapper>

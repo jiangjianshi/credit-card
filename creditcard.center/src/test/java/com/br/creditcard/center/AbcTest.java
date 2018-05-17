@@ -1,7 +1,8 @@
 package com.br.creditcard.center;
 
 import com.br.creditcard.common.dto.TestDto;
-import com.br.creditcard.mapper.ActivityDao;
+import com.br.creditcard.common.po.User;
+import com.br.creditcard.mapper.ActivityMapper;
 import com.br.creditcard.pagehelper.PagedList;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -28,7 +29,7 @@ public class AbcTest {
     private static Logger logger = LoggerFactory.getLogger(AbcTest.class);
 
     @Resource
-    private ActivityDao activityDao;
+    private ActivityMapper activityMapper;
 
     @Test
     public void abcTest() throws Exception {
@@ -36,9 +37,9 @@ public class AbcTest {
 
 
         PageHelper.startPage(1, 10);
-        List<Map<String, Object>> list =  activityDao.selectById();
-        PageInfo<Map<String, Object>> pageInfo = new PageInfo<>(list);
-        PagedList<Map<String, Object>> pagedList = PagedList.newMe(pageInfo);
+        List<User> list =  activityMapper.selectByPage();
+        PageInfo<User> pageInfo = new PageInfo<>(list);
+        PagedList<User> pagedList = PagedList.newMe(pageInfo);
         logger.info("log info {}", 111111);
         logger.error("log error");
         logger.warn("log warn");
