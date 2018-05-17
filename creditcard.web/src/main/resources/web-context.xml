@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<!--<import resource="web-consumer.xml"/>-->
+	<import resource="web-consumer.xml"/>
 	<import resource="web-resources.xml" />
 	<import resource="web-mvc.xml"/>
 </beans>

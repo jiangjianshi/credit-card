@@ -41,5 +41,15 @@
         <property name="poolSize" value="64"/>
         <property name="retry" value="${card.server.retry}"/>
     </bean>
-
+    <!--your interface-->
+    <!-- testHandler -->
+    <bean id="testHandler" class="com.br.rpc.consumer.service.Service">
+        <property name="project" value="creditCard_project"/>
+        <property name="serviceClass" value="com.br.creditcard.api.service.TestHandler"/>
+        <property name="model" value="${card.server.model}"/>
+        <property name="version" value="${card.server.version}"/>
+        <property name="timeOut" value="30000"/>
+        <property name="poolSize" value="64"/>
+        <property name="retry" value="${card.server.retry}"/>
+    </bean>
 </beans>

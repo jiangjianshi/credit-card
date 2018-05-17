@@ -22,12 +22,12 @@
         <constructor-arg name="configuration" ref="providerConfiguration"/>
     </bean>
 
-    <!-- userHandler -->
-    <!--<bean id="userHandler" class="com.br.rpc.provider.processor.Processor">-->
-        <!--<property name="project" value="card_project"/>-->
-        <!--<property name="handler" value="com.br.card.center.handler.UserHandler"/>-->
-        <!--<property name="model" value="${card.server.model}"/>-->
-        <!--<property name="version" value="${card.server.version}"/>-->
-    <!--</bean>-->
+    <!-- activityHelpMappingHandler -->
+    <bean id="testHandler" class="com.br.rpc.provider.processor.Processor">
+        <property name="project" value="creditCard_project"/>
+        <property name="handler" value="com.br.creditcard.center.handler.TestHandler"/>
+        <property name="model" value="${card.server.model}"/>
+        <property name="version" value="${card.server.version}"/>
+    </bean>
 
 </beans>

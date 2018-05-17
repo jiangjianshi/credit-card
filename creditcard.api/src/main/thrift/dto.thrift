@@ -1,4 +1,4 @@
-namespace java com.br.card.api.dto
+namespace java com.br.creditcard.api.dto
 
 
 typedef i16 short
@@ -13,27 +13,9 @@ struct BoolDTO {
     4: bool value
 }
 
-// 调用是否成功DTO
-struct StringDTO {
-    1: bool success,
-    2: int code,
-    3: string message,
-    4: string value
+// 返回结果DTO
+struct ApiDto {
+    1: int code,
+    2: string message,
+    3: string data
 }
-
-struct ResultDTO{
-	1:bool success,
-	2:int code,
-	3:string message,
-	4:int resultListTotal,
-	5:list<map<string, string>> resultList,
-	6:int waitReceviceTotal
-}
-struct ResultMapDTO{
-	1:bool success,
-	2:int code,
-	3:string message,
-	4:int resultListTotal,
-	5:map<string, string> resultMap
-}
-
