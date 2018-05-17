@@ -131,7 +131,6 @@
     <select id="selectById" resultType="java.util.Map">
         SELECT
         *
-        from c_activity ca
-        where ca.id = 2
+        from c_card ca
     </select>
 </mapper>

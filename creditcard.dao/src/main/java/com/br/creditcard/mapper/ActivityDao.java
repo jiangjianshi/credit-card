@@ -30,5 +30,5 @@ public interface ActivityDao {
    */
   Integer deleteActivity(Map<String, Object> paramMap);
 
-  Map<String, Object> selectById();
+  List<Map<String, Object>> selectById();
 }
