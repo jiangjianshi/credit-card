@@ -53,42 +53,6 @@
             </Policies>
         </RollingFile>
 
-        <!-- rpc debug级别的 -->
-        <RollingFile name="rpc-debug" fileName="${LOG_HOME}/rpc-debug.log"
-                     filePattern="logs/rpc-debug.log.%d{MM-dd-yyyy}">
-            <ThresholdFilter level="debug" onMatch="ACCEPT"
-                             onMismatch="DENY"/>
-            <PatternLayout
-                    pattern="%d{yyyy-MM-dd 'at' HH:mm:ss.SSS z} %-5level %c %M-%msg%xEx%n"/>
-            <Policies>
-                <TimeBasedTriggeringPolicy modulate="false" interval="1"/>
-            </Policies>
-        </RollingFile>
-
-        <!--  rpc warn级别的 -->
-        <RollingFile name="rpc-warn" fileName="${LOG_HOME}/rpc-warn.log"
-                     filePattern="logs/rpc-warn.log.%d{MM-dd-yyyy}">
-            <ThresholdFilter level="warn" onMatch="ACCEPT"
-                             onMismatch="DENY"/>
-            <PatternLayout
-                    pattern="%d{yyyy-MM-dd 'at' HH:mm:ss.SSS z} %-5level %c %M-%msg%xEx%n"/>
-            <Policies>
-                <TimeBasedTriggeringPolicy modulate="false" interval="1"/>
-            </Policies>
-        </RollingFile>
-
-        <!-- thrift warn级别的 -->
-        <RollingFile name="thrift-warn" fileName="${LOG_HOME}/thrift-warn.log"
-                     filePattern="logs/thrift-warn.log.%d{MM-dd-yyyy}">
-            <ThresholdFilter level="warn" onMatch="ACCEPT"
-                             onMismatch="DENY"/>
-            <PatternLayout
-                    pattern="%d{yyyy-MM-dd 'at' HH:mm:ss.SSS z} %-5level %c %M-%msg%xEx%n"/>
-            <Policies>
-                <TimeBasedTriggeringPolicy modulate="false" interval="1"/>
-            </Policies>
-        </RollingFile>
-
         <!-- thrift error级别的 -->
         <RollingFile name="thrift-error" fileName="${LOG_HOME}/thrift-error.log"
                      filePattern="logs/thrift-error.log.%d{MM-dd-yyyy}">
@@ -101,9 +65,10 @@
             </Policies>
         </RollingFile>
 
-        <!-- demeter info级别的 -->
-        <RollingFile name="anubis-info" fileName="${LOG_HOME}/anubis-info.log"
-                     filePattern="logs/anubis-info.log.%d{MM-dd-yyyy}">
+
+        <!-- creditcard info级别的 -->
+        <RollingFile name="creditcard-info" fileName="${LOG_HOME}/creditcard-info.log"
+                     filePattern="logs/creditcard-info.log.%d{MM-dd-yyyy}">
             <ThresholdFilter level="info" onMatch="ACCEPT"
                              onMismatch="DENY"/>
             <PatternLayout
@@ -113,8 +78,9 @@
             </Policies>
         </RollingFile>
 
-        <RollingFile name="anubis-warn" fileName="${LOG_HOME}/anubis-warn.log"
-                     filePattern="logs/anubis-warn.log.%d{MM-dd-yyyy}">
+        <!-- creditcard warn -->
+        <RollingFile name="creditcard-warn" fileName="${LOG_HOME}/creditcard-warn.log"
+                     filePattern="logs/creditcard-warn.log.%d{MM-dd-yyyy}">
             <ThresholdFilter level="warn" onMatch="ACCEPT"
                              onMismatch="DENY"/>
             <PatternLayout
@@ -124,44 +90,9 @@
             </Policies>
         </RollingFile>
 
-        <RollingFile name="anubis-error" fileName="${LOG_HOME}/anubis-error.log"
-                     filePattern="logs/anubis-error.log.%d{MM-dd-yyyy}">
-            <ThresholdFilter level="error" onMatch="ACCEPT"
-                             onMismatch="DENY"/>
-            <PatternLayout
-                    pattern="%d{yyyy-MM-dd 'at' HH:mm:ss.SSS z} %-5level %c %M-%msg%xEx%n"/>
-            <Policies>
-                <TimeBasedTriggeringPolicy modulate="false" interval="1"/>
-            </Policies>
-        </RollingFile>
-
-        <!-- card info级别的 -->
-        <RollingFile name="card-info" fileName="${LOG_HOME}/card-info.log"
-                     filePattern="logs/card-info.log.%d{MM-dd-yyyy}">
-            <ThresholdFilter level="info" onMatch="ACCEPT"
-                             onMismatch="DENY"/>
-            <PatternLayout
-                    pattern="%d{yyyy-MM-dd 'at' HH:mm:ss.SSS z} %-5level %c %M-%msg%xEx%n"/>
-            <Policies>
-                <TimeBasedTriggeringPolicy modulate="false" interval="1"/>
-            </Policies>
-        </RollingFile>
-
-        <!-- card warn -->
-        <RollingFile name="card-warn" fileName="${LOG_HOME}/card-warn.log"
-                     filePattern="logs/card-warn.log.%d{MM-dd-yyyy}">
-            <ThresholdFilter level="warn" onMatch="ACCEPT"
-                             onMismatch="DENY"/>
-            <PatternLayout
-                    pattern="%d{yyyy-MM-dd 'at' HH:mm:ss.SSS z} %-5level %c %M-%msg%xEx%n"/>
-            <Policies>
-                <TimeBasedTriggeringPolicy modulate="false" interval="1"/>
-            </Policies>
-        </RollingFile>
-
-        <!-- card error -->
-        <RollingFile name="card-error" fileName="${LOG_HOME}/card-error.log"
-                     filePattern="logs/card-error.log.%d{MM-dd-yyyy}">
+        <!-- creditcard error -->
+        <RollingFile name="creditcard-error" fileName="${LOG_HOME}/creditcard-error.log"
+                     filePattern="logs/creditcard-error.log.%d{MM-dd-yyyy}">
             <ThresholdFilter level="error" onMatch="ACCEPT"
                              onMismatch="DENY"/>
             <PatternLayout
@@ -183,20 +114,11 @@
         <logger name="com.br.rpc" additivity="false">
             <appender-ref ref="rpc-info"/>
             <appender-ref ref="rpc-error"/>
-            <appender-ref ref="rpc-debug"/>
-            <appender-ref ref="rpc-warn"/>
         </logger>
 
-        <logger name="com.br.anubis" additivity="false">
-            <appender-ref ref="anubis-info"/>
-            <appender-ref ref="anubis-warn"/>
-            <appender-ref ref="anubis-error"/>
-        </logger>
-
-        <logger name="com.br.card" additivity="false">
-            <appender-ref ref="card-info"/>
-            <appender-ref ref="card-error"/>
-            <appender-ref ref="card-warn"/>
+        <logger name="com.br.creditcard" additivity="false">
+            <appender-ref ref="creditcard-info"/>
+            <appender-ref ref="creditcard-error"/>
             <appenderRef ref="Console" />
             <!--这段上正式的时候需要去掉-->
         </logger>
@@ -207,7 +129,6 @@
 
         <logger name="org.apache.thrift" additivity="false">
             <appender-ref ref="thrift-error"/>
-            <appender-ref ref="thrift-warn"/>
         </logger>
 
     </loggers>

@@ -2,9 +2,8 @@ package com.br.creditcard.center.handler;
 
 import com.br.creditcard.api.dto.ApiDto;
 import com.br.creditcard.center.service.TestService;
-import com.br.creditcard.center.utils.HandleResult;
+import com.br.creditcard.center.utils.HandlerResult;
 import com.br.creditcard.common.po.User;
-import com.br.creditcard.common.utils.GsonUtils;
 import org.apache.thrift.TException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +27,6 @@ public class TestHandler implements com.br.creditcard.api.service.TestHandler.If
 
         List<User> userList = testService.getAllUser();
 
-        return HandleResult.success("成功", userList);
+        return HandlerResult.success("成功", userList);
     }
 }
