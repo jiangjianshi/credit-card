@@ -8,7 +8,7 @@ import com.br.creditcard.common.utils.GsonUtils;
 /**
  * Created by bairong on 2018/5/17.
  */
-public class HandleResult {
+public class HandlerResult {
 
     /**
      * 成功
