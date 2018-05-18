@@ -30,6 +30,9 @@ public class ActivityController extends  BaseController{
     @Resource
     private TestHandler.Iface testHandler;
 
+//    @Resource
+//    private RedisTemplate<String, String> redisTemplate;
+
 
     @RequestMapping("/checkActivity")
     @ResponseBody
@@ -48,6 +51,9 @@ public class ActivityController extends  BaseController{
         } catch (TException e) {
             e.printStackTrace();
         }
+//        redisTemplate.opsForValue().set("testKey","redisValue");
+//        String value = redisTemplate.opsForValue().get("testKey");
+//        logger.info("redis value={}", value);
         return null;
     }
 }

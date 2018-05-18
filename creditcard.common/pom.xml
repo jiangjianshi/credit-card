@@ -46,7 +46,7 @@
             <!--<artifactId>logback-classic</artifactId>-->
             <!--<version>1.2.3</version>-->
         <!--</dependency>-->
-
+        <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
     </dependencies>
 
     <build>

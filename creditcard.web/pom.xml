@@ -145,13 +145,6 @@
             <version>2.2.4</version>
         </dependency>
 
-        <!--test-->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <!-- redis -->
         <dependency>
             <groupId>redis.clients</groupId>
@@ -159,6 +152,12 @@
             <version>2.8.1</version>
             <type>jar</type>
             <scope>compile</scope>
+        </dependency>
+        <!--test-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <!--poi-->
